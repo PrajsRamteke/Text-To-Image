@@ -3,10 +3,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const generateBtn = document.querySelector("#generate-btn");
   const textInput = document.querySelector("#text-input");
+  const apiKeyInput = document.querySelector("#api-key-input");
   const imageContainer = document.querySelector("#image-container");
-  const apiKey = "Enter Your OpenAi API Key";
+
   generateBtn.addEventListener("click", async () => {
-    const text = textInput.value;
+    const text = textInput.value; //prompt for image
+    const apiKey = apiKeyInput.value; //api key
+    apiKeyInput.disabled = true;
 
     const data = {
       prompt: text,
@@ -34,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const result = await response.json();
       const image = result.data[0].url;
-      generateBtn.innerText = "Done";
       imageContainer.innerHTML = `<img src="${image}">`;
+      generateBtn.innerText = "Done";
     } catch (error) {
       console.log("Error:", error);
       imageContainer.innerHTML = `<p>Error: ${error.message}</p>`;
