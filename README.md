@@ -76,7 +76,7 @@ This project uses the following external libraries:
 
 ## 10) License
 
-This project is licensed under the MIT License.
+Created by Prajwal Ramteke 
 
 ## 11) Frequently Asked Questions (FAQ)
 
